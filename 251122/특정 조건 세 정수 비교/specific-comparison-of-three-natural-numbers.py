@@ -1,6 +1,6 @@
 a, b, c = list(map(int, input().split()))
 
-if a == c:
+if a == c or a == b or b == c:
     print(1, end=" ")
 else:
     print(0, end=" ")
