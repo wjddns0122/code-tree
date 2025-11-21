@@ -1,3 +1,3 @@
-a, b = list(map(int, input().split()))
+A, B = list(map(int, input().split()))
 
-print(a, b, a+b)
+print(f"{A} {B} {A+B}")
