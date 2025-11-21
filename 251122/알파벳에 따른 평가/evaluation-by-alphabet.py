@@ -9,4 +9,6 @@ elif n == "B":
 elif n == "C":
     print("Usually")
 elif n == "D":
-    print("Effor")
+    print("Effort")
+else:
+    print("Failure")
