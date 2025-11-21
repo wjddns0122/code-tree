@@ -1,3 +1,5 @@
 a, b = list(map(int, input().split()))
 
-print(f"{a + b} {a / b:.1f}")
+add = a + b
+average = add / 2
+print(add, average)
