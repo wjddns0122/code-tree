@@ -1,7 +1,5 @@
-weight = 13
-gravity = 0.165000
+a = 13
+b = 0.165
+result = a * b
 
-result = weight * gravity
-gravity = '%0.6f' % 0.165000
-result1 = '%0.6f' % result
-print(str(weight) + " * " + str(gravity) + " = " + str(result1))
+print(f"{result:6f}")
