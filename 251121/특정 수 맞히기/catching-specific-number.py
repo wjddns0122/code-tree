@@ -8,4 +8,4 @@ while True:
         continue
     elif n == 25:
         print("Good")
-        breakwh
+        break
