@@ -1,6 +1,6 @@
 a, b, c = list(map(int, input().split()))
 
-if b > c and a==c or a == b:
+if a <= b and a <= c:
     print("1",end=" ")
 else:
     print("0",end=" ")
