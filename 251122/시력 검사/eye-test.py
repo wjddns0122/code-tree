@@ -3,7 +3,7 @@ b = float(input())
 
 if a >= 1.0 and b >= 1.0:
     print('High')
-if a >= 0.5 and b >= 0.5:
+elif a >= 0.5 and b >= 0.5:
     print('Middle')
 else:
     print("Low")
