@@ -1,3 +1,3 @@
 n = int(input())
 
-print("Your score is " + str(n) + " point.")
+print(f"Your score is {n} point.")
