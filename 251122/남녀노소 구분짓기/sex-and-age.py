@@ -1,7 +1,7 @@
 gender = int(input())
 age = int(input())
 
-if n == 0:
+if gender == 0:
     if age >= 19:
         print("MAN")
     else:
