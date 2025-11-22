@@ -1,9 +1,7 @@
-arr = input().split()
-
-a, b = int(arr[0]), int(arr[1])
+a, b = list(map(int, input().split()))
 
 if a // b == 0:
-    c = '0.'
+    c = "0."
 else:
     c = str(a // b) + '.'
 a = a % b
