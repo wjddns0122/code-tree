@@ -1,10 +1,11 @@
+# 변수 선언 및 입력
 n = int(input())
-cnt = 0
+sum_val = 0
 
-for i in range(1, n + 1):
-    cnt += i
-    if cnt >= n:
-        cnt = cnt - i
-        break
+# 1부터 증가시키며 더한 값이 n이상이 된 순간, 더해진 숫자를 출력합니다.
+for i in range(1, 101):
+	sum_val += i
+	if sum_val >= n:
+		print(i)
+		break
 
-print(cnt)
