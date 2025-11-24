@@ -1,27 +1,15 @@
+# 변수 선언 및 입력
 n = int(input())
 
-rows = 2 * n  # 전체 줄 수
+# i가 짝수인 경우 별을 1개, 홀수인 경우 i + 1개 출력합니다
+for i in range(2 * n):
+	if i % 2 == 0:
+		for _ in range(1 + i // 2):
+			print("*", end=" ")
+	else:
+		for _ in range(n - (i - 1) // 2):
+			print("*", end=" ")
+	print()
 
-for i in range(1, rows + 1):
-    # 위쪽/아래쪽 대칭을 위해 기준 줄 번호 t 만들기 (1 ~ n)
-    if i <= n:
-        t = i
-    else:
-        t = 2 * n + 1 - i  # 위쪽에서 대칭되는 줄 번호
-
-    # t번째 줄에서 찍을 별 개수(cnt) 결정
-    if t == 1:
-        cnt = 1
-    elif t == 2:
-        cnt = n
-    elif t == 3:
-        cnt = 2
-    else:  # t >= 4
-        cnt = n - t + 3   # N-1, N-2, ..., 3 이런 식으로 내려감
-
-    # 별 cnt개를 " *" 사이에 공백 넣어서 출력
-    for k in range(cnt):
-        print("*", end="")
-        if k != cnt - 1:   # 마지막 별 뒤에는 공백 X
-            print(" ", end="")
-    print()
+### 와 이런 방법이... 그냥 1 3 2 2 3 1 이렇게 대칭점으로 푸는게 아니라
+## 그냥 i += 1 일수록 2로 나누면 출력됌 
