@@ -1,15 +1,11 @@
+# 변수 선언 및 입력
 n = int(input())
-cnt = 1
-
+	
+# 좌우 지그재그로 출력합니다.
 for i in range(n):
-    if i % 2 == 0:
-        for j in range(n):
-            print(cnt, end=" ")
-            cnt += 1
-        cnt += n-1
-    else:
-        for j in range(n):
-            print(cnt, end=" ")
-            cnt -= 1
-        cnt += n+1
-    print()
+	for j in range(n):
+		if i % 2 == 0:
+			print((i * n) + j + 1, end=" ")
+		else:
+			print((i * n) + n - j, end=" ")
+	print()
