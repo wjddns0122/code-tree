@@ -1,20 +1,11 @@
+# 변수 선언 및 입력
 n = int(input())
-cnt = 1
-
+	
+# 좌우로 반복하여 출력합니다.
 for i in range(n):
-    row = []
-
-    for j in range(n):
-        row.append(cnt)
-        cnt += 1
-        if (cnt == n + 1):
-            cnt = 1
-
-    if i % 2 != 0:
-        for j in range(n - 1, -1, -1):
-            print(row[j], end="")
-    else:
-        for j in range(n):
-            print(row[j], end="")
-
-    print()
+	for j in range(n):
+		if i % 2 == 0:
+			print(j + 1, end="")
+		else:
+			print(n - j, end="")
+	print()
