@@ -3,7 +3,7 @@ result = []
 
 # 반복문에서 마지막 숫자를 제외한 값 처리
 for num in arr[:-1]:
-    if num >= 260:
+    if num >= 250:
         break
     result.append(num)
 
