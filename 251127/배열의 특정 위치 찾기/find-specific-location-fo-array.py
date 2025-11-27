@@ -1,11 +1,7 @@
 arr = list(map(int, input().split()))
 a = []
-b = []
-for i in arr:
-    if i % 2 == 0:
-        b.append(i)
-        
-result1 = sum(b)
+
+result1 = sum(arr[1:len(arr) + 1:2])
 
 for num in arr:
     if num % 3 == 0:
