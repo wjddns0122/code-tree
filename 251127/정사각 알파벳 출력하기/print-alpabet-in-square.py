@@ -1,9 +1,10 @@
+# 변수 선언 및 입력
 n = int(input())
-x = 'A'
-cnt = 0
-
-for i in range(n):
-    for j in range(n):
-        print(chr(ord(x) + cnt), end="")
-        cnt += 1
-    print()
+cnt = 'A'
+	
+# 알파벳을 정사각형 모양으로 출력합니다.
+for _ in range(n):
+	for _ in range(n):
+		print(cnt, end="")
+		cnt = chr(ord(cnt) + 1)
+	print()
