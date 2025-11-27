@@ -8,5 +8,5 @@ for i in range(1, n + 1):
 		if i % j == 0:
 			isprime = False
 	
-	if isprime:
+	if isprime == True:
 		print(i, end=" ")
