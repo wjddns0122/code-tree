@@ -1,0 +1,8 @@
+n = int(input())
+arr = list(map(int, input().split()))
+
+# Please write your code here.
+for num in arr:
+    if num < 0:
+        num = abs(num)
+    print(num, end=" ")
