@@ -1,7 +1,7 @@
 M, D = map(int, input().split())
 
 # Please write your code here.
-def is_thiryone():
+def is_thiryone(M, D):
     if M == 1 or M == 3 or M == 5 or M == 7 or M == 8 or M == 10 or M == 12:
         if D <= 31:
             print("Yes")
@@ -18,4 +18,4 @@ def is_thiryone():
         else:
             print("No")
 
-is_thiryone()
+is_thiryone(M, D)
