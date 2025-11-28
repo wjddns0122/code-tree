@@ -7,7 +7,7 @@ def sd(A):
             cnt += 1
             if cnt >= 2:
                 break
-                return False
+            return False
         else:
             return True
 
