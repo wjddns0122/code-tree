@@ -1,15 +1,17 @@
-from collections import deque
+# 변수 선언 및 입력
+n = int(input())
+nums = list(map(int, input().split()))
 
-num_of_groups = int(input())
-numbers = list(map(int, input().split()))
-groups: list[int] = [[0, 0]] # 인덱스 오류를 막기 위한 초기화
 
-numbers = deque(sorted(numbers))
+# nums를 정렬합니다.
+nums.sort()
 
-for _ in range(len(numbers) // 2): # 조어진 조건 상, 홀수일 일은 없음
-    cur_small_value_index: int = 0
-    while groups[-1] == [numbers[cur_small_value_index], numbers[-1]]:
-        cur_small_value_index += 1
-    groups.append([numbers.popleft(), numbers.pop()])
+group_max = 0
+for i in range(n):
+    # i번째와 2n - 1 - i번째 원소를 매칭합니다.
+    group_sum = nums[i] + nums[2*n - 1 - i]
+    if group_sum > group_max:
+        # 최댓값을 갱신합니다.
+        group_max = group_sum
 
-print(max(sum(group) for group in groups))
+print(group_max)
