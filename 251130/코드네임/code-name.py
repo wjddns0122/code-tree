@@ -1,17 +1,19 @@
-MAX_N = 5
+class Agent:
+    def __init__(self, codename, score):
+        self.codename = codename
+        self.score = score
 
-codenames = []
-scores = []
-for _ in range(MAX_N):
-    codename, score = input().split()
-    codenames.append(codename)
-    scores.append(int(score))
+agents = []
+for _ in range(5):
+    data = input().split()
+    codename = data[0]
+    score = int(data[1])
+    agents.append(Agent(codename, score))
 
-# Please write your code here.
-class myPerson:
-    def __init__(self, codenames, scores):
-        self.codenames = min(codenames)
-        self.scores = min(scores)
+# Find the agent with the lowest score
+min_agent = agents[0]
+for agent in agents:
+    if agent.score < min_agent.score:
+        min_agent = agent
 
-myPerson1 = myPerson(codenames, scores)
-print(myPerson1.codenames, myPerson1.scores)
+print(min_agent.codename, min_agent.score)
