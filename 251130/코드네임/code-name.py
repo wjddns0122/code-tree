@@ -10,9 +10,8 @@ for _ in range(MAX_N):
 # Please write your code here.
 class myPerson:
     def __init__(self, codenames, scores):
-        self.codenames = codenames
-        self.scores = scores
-        codenames.sort()
-        scores.sort()
+        self.codenames = min(codenames)
+        self.scores = min(scores)
 
-print(min(codenames), min(scores))
+myPerson1 = myPerson(codenames, scores)
+print(myPerson1.codenames, myPerson1.scores)
