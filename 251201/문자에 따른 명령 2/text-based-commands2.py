@@ -1,33 +1,22 @@
-import sys
+# 변수 선언 및 입력
+dirs = input()
+x, y = 0, 0
+curr_dir = 3
 
-def solve():
-    # 명령어를 문자열로 입력받습니다.
-    commands = sys.stdin.readline().strip()
-    
-    # 초기 위치 (0, 0)
-    x, y = 0, 0
-    
-    # 초기 방향: 북쪽 (North)
-    # 0: 북, 1: 동, 2: 남, 3: 서
-    dir_idx = 0
-    
-    # 북, 동, 남, 서 순서에 따른 dx, dy
-    dx = [0, 1, 0, -1]
-    dy = [1, 0, -1, 0]
-    
-    for cmd in commands:
-        if cmd == 'L':
-            # 왼쪽으로 90도 회전 (북 -> 서 -> 남 -> 동)
-            dir_idx = (dir_idx - 1) % 4
-        elif cmd == 'R':
-            # 오른쪽으로 90도 회전 (북 -> 동 -> 남 -> 서)
-            dir_idx = (dir_idx + 1) % 4
-        elif cmd == 'F':
-            # 현재 방향으로 한 칸 이동
-            x += dx[dir_idx]
-            y += dy[dir_idx]
-            
-    print(x, y)
+# 동, 남, 서, 북 순으로 dx, dy를 정의합니다.
+dxs = [1,  0, -1, 0]
+dys = [0, -1,  0, 1]
 
-if __name__ == "__main__":
-    solve()
+# 움직이는 것을 진행합니다.
+for c_dir in dirs:
+    # 반시계방향 90' 회전
+    if c_dir == 'L':
+        curr_dir = (curr_dir - 1 + 4) % 4
+    # 시계방향 90' 회전
+    elif c_dir == 'R':
+        curr_dir = (curr_dir + 1) % 4
+    # 직진
+    else:
+        x, y = x + dxs[curr_dir], y + dys[curr_dir]
+
+print(x, y)
