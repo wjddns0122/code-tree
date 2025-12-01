@@ -1,19 +1,33 @@
-# 변수 선언 및 입력
-dir, foward = list(input().strip())
-# 초기 상태가 북쪽을 향해야 하므로 
-x, y = 0, 1
+import sys
 
-# 동, 서, 남, 북 순으로 dx, dy를 정의합니다.
-dx = [1, -1,  0, 0]
-dy = [0,  0, -1, 1]
+def solve():
+    # 명령어를 문자열로 입력받습니다.
+    commands = sys.stdin.readline().strip()
+    
+    # 초기 위치 (0, 0)
+    x, y = 0, 0
+    
+    # 초기 방향: 북쪽 (North)
+    # 0: 북, 1: 동, 2: 남, 3: 서
+    dir_idx = 0
+    
+    # 북, 동, 남, 서 순서에 따른 dx, dy
+    dx = [0, 1, 0, -1]
+    dy = [1, 0, -1, 0]
+    
+    for cmd in commands:
+        if cmd == 'L':
+            # 왼쪽으로 90도 회전 (북 -> 서 -> 남 -> 동)
+            dir_idx = (dir_idx - 1) % 4
+        elif cmd == 'R':
+            # 오른쪽으로 90도 회전 (북 -> 동 -> 남 -> 서)
+            dir_idx = (dir_idx + 1) % 4
+        elif cmd == 'F':
+            # 현재 방향으로 한 칸 이동
+            x += dx[dir_idx]
+            y += dy[dir_idx]
+            
+    print(x, y)
 
-if dir == "L":
-    # 왼쪽으로 가면 서쪽으로 이동해야함
-    if foward == "F":
-        x, y = dx[1], dy[1]
-
-elif dir == "R":
-    if foward == "F":
-        x, y = dx[0], dy[0]
-
-print(x, y)
+if __name__ == "__main__":
+    solve()
