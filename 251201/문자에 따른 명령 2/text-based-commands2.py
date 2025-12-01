@@ -1,5 +1,5 @@
 # 변수 선언 및 입력
-dir, foward = list(map(str, list(input())))
+dir, foward = list(input().strip())
 # 초기 상태가 북쪽을 향해야 하므로 
 x, y = 0, 1
 
